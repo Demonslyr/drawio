@@ -92,6 +92,7 @@ public class GitHubServlet extends HttpServlet
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * This will always use THE client secret
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException
@@ -102,7 +103,7 @@ public class GitHubServlet extends HttpServlet
 		
 		if (client != null && code != null)
 		{
-			String secret = client.equals("23bc97120b9035515661") ? DEV_CLIENT_SECRET : CLIENT_SECRET; 
+			String secret = CLIENT_SECRET; 
 
 			String url = "https://github.com/login/oauth/access_token";
 			URL obj = new URL(url);
