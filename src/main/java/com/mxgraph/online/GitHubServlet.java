@@ -1,4 +1,5 @@
 /**
+ * Copyright (c) 2020, Dan Murtha
  * Copyright (c) 2006-2017, JGraph Ltd
  * Copyright (c) 2006-2017, Gaudenz Alder
  */
@@ -106,16 +107,18 @@ public class GitHubServlet extends HttpServlet
 			String secret = CLIENT_SECRET; 
 
 			String url = "https://github.com/login/oauth/access_token";
+			
 			URL obj = new URL(url);
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
+                        System.out.print("Start Git auth Request");
 			con.setRequestMethod("POST");
 			con.setRequestProperty("User-Agent", "draw.io");
 
 			String urlParameters = "client_id=" + client + "&client_secret="
 					+ secret + "&code=" + code;
-
+                        System.out.print(urlParameters);
 			// Send post request
+                        System.out.print("Send Git auth Request");
 			con.setDoOutput(true);
 			DataOutputStream wr = new DataOutputStream(con.getOutputStream());
 			wr.writeBytes(urlParameters);
