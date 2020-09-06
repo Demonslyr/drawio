@@ -7,7 +7,7 @@ package com.mxgraph.online;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -54,7 +54,7 @@ public class GitHubServlet extends HttpServlet
 			try
 			{
 				CLIENT_SECRET = Utils
-						.readInputStream(new FileOutputStream(CLIENT_SECRET_FILE_PATH))
+						.readInputStream(new FileInputStream(CLIENT_SECRET_FILE_PATH))
 						.replaceAll("\n", "");
 			}
 			catch (IOException e)
