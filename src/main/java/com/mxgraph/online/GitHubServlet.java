@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation ProxyServlet
  */
 @SuppressWarnings("serial")
+@WebServlet("/github")
 public class GitHubServlet extends HttpServlet
 {
 
