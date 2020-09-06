@@ -25,22 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class GitHubServlet extends HttpServlet
 {
-
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String DEV_CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-greds/github_dev_client_secret";
-
-
-	/**
-	 * Path component under war/ to locate iconfinder_key file.
-	 */
-	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-greds/github_client_secret";
-
-	/**
-	 * 
-	 */
-	private static String DEV_CLIENT_SECRET = null;
+	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-creds/github_client_secret";
 
 	/**
 	 * 
@@ -60,21 +48,6 @@ public class GitHubServlet extends HttpServlet
 	 */
 	protected void updateKeys()
 	{
-		if (DEV_CLIENT_SECRET == null)
-		{
-			try
-			{
-				DEV_CLIENT_SECRET = Utils
-						.readInputStream(getServletContext()
-								.getResourceAsStream(DEV_CLIENT_SECRET_FILE_PATH))
-						.replaceAll("\n", "");
-			}
-			catch (IOException e)
-			{
-				throw new RuntimeException("Dev client secret path invalid.");
-			}
-		}
-
 		if (CLIENT_SECRET == null)
 		{
 			try
