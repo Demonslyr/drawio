@@ -28,7 +28,7 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-creds/github_client_secret";
+	public static final String CLIENT_SECRET_FILE_PATH = "/draw/WEB-INF/git-creds/github_client_secret";
 
 	/**
 	 * 
@@ -53,8 +53,7 @@ public class GitHubServlet extends HttpServlet
 			try
 			{
 				CLIENT_SECRET = Utils
-						.readInputStream(getServletConfig()
-						                .getServletContext()
+						.readInputStream(getServletContext()
 								.getResourceAsStream(CLIENT_SECRET_FILE_PATH))
 						.replaceAll("\n", "");
 			}
