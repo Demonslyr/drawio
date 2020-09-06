@@ -29,13 +29,13 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String DEV_CLIENT_SECRET_FILE_PATH = "/WEB-INF/github_dev_client_secret";
+	public static final String DEV_CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-greds/github_dev_client_secret";
 
 
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/github_client_secret";
+	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/git-greds/github_client_secret";
 
 	/**
 	 * 
