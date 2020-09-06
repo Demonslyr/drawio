@@ -33,7 +33,7 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * 
 	 */
-	private static String CLIENT_SECRET = "eaf891c5a0c57bb9722dbf1f7b69e008905e3b39";
+	private static String CLIENT_SECRET = null;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -53,8 +53,9 @@ public class GitHubServlet extends HttpServlet
 			try
 			{
 				CLIENT_SECRET = Utils
-						.readInputStream(getServletContext()
-								.getResourceAsStream("/WEB-INF/git-creds/github_client_secret"))
+						.readInputStream(getServletConfig()
+						                .getServletContext()
+								.getResourceAsStream(CLIENT_SECRET_FILE_PATH))
 						.replaceAll("\n", "");
 			}
 			catch (IOException e)
