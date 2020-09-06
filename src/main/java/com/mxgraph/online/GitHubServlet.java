@@ -7,6 +7,7 @@ package com.mxgraph.online;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -28,7 +29,7 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String CLIENT_SECRET_FILE_PATH = "/Git_Config/github_client_secret";
+	public static final String CLIENT_SECRET_FILE_PATH = "/usr/local/tomcat/webapps/draw/Git_Config/github_client_secret";
 
 	/**
 	 * 
@@ -53,8 +54,7 @@ public class GitHubServlet extends HttpServlet
 			try
 			{
 				CLIENT_SECRET = Utils
-						.readInputStream(getServletContext()
-								.getResourceAsStream(CLIENT_SECRET_FILE_PATH))
+						.readInputStream(new FileOutputStream(CLIENT_SECRET_FILE_PATH))
 						.replaceAll("\n", "");
 			}
 			catch (IOException e)
