@@ -33,7 +33,7 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * 
 	 */
-	private static String CLIENT_SECRET = null;
+	private static String CLIENT_SECRET = "eaf891c5a0c57bb9722dbf1f7b69e008905e3b39";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
