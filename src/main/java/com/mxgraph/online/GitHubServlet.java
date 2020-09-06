@@ -28,7 +28,7 @@ public class GitHubServlet extends HttpServlet
 	/**
 	 * Path component under war/ to locate iconfinder_key file.
 	 */
-	public static final String CLIENT_SECRET_FILE_PATH = "/WEB-INF/github_client_secret";
+	public static final String CLIENT_SECRET_FILE_PATH = "/Git_Config/github_client_secret";
 
 	/**
 	 * 
