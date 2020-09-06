@@ -54,7 +54,7 @@ public class GitHubServlet extends HttpServlet
 			{
 				CLIENT_SECRET = Utils
 						.readInputStream(getServletContext()
-								.getResourceAsStream(CLIENT_SECRET_FILE_PATH))
+								.getResourceAsStream("/WEB-INF/git-creds/github_client_secret"))
 						.replaceAll("\n", "");
 			}
 			catch (IOException e)
